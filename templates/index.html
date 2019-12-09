@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2019-12-09 16:25:20
- * @LastEditTime: 2019-12-09 16:43:09
+ * @LastEditTime: 2019-12-09 16:57:11
  * @LastEditors: Please set LastEditors
  * @Description: #我们先在 templates 目录下创建一个 index.html 文件，作为主页模板。主页需要显示电影条目列表和个人信息
  * @FilePath: \watchlist\templates\index.html
@@ -11,6 +11,7 @@
  <head>
      <meta charset="utf-8">
      <title>{{ name }}'s Watchlist</title>
+     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
  </head>
  <body>
      <h2>{{ name }}'s Watchlist</h2>
