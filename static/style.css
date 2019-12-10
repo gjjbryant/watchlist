@@ -84,6 +84,16 @@ nav li a:hover {
     border-radius: 5px;
     padding: 3px 5px;
 }
+.douban {
+    font-size: 14px;
+    font-weight: bold;
+    color:white;
+    text-decoration: none;
+    background: rgb(31, 245, 24);
+    border-radius: 5px;
+    padding: 3px 5px;
+}
+
 
 /* 覆盖某些浏览器对 input 元素定义的字体 */
 input[type=submit] {

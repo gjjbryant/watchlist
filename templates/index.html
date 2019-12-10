@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2019-12-10 13:35:44
- * @LastEditTime: 2019-12-10 16:09:21
+ * @LastEditTime: 2019-12-10 17:15:28
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \watchlist\templates\index.html
@@ -27,7 +27,7 @@
                     <input class="btn" type="submit" name="delete" value="Delete" onclick="return confirm('Are you sure?')">
                 </form>
             {% endif %}
-            <a class="imdb" href="https://www.imdb.com/find?q={{ movie.title }}" target="_blank" title="Find this movie on IMDb">IMDb</a>
+            <a class="douban" href="https://movie.douban.com/subject_search?search_text={{ movie.title }}" target="_blank" title="Find this movie on IMDb">豆</a>
         </span>   
     </li>
     {% endfor %}
