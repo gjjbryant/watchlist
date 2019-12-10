@@ -1,0 +1,44 @@
+<!--
+ * @Author: your name
+ * @Date: 2019-12-10 13:25:19
+ * @LastEditTime: 2019-12-10 16:14:02
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \watchlist\templates\base.html <!--基模板中需要在实际的子模板中追加或重写的部分则可以定义成块（block）。块使用 block 标签创建，-->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     {% block head %}
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     {% for message in get_flashed_messages() %}
+     <div class="alert">{{ message }}</div>
+     {% endfor %}
+     <h2></h2>
+     <title>{{ user.name }}'s Watchlist</title>
+     <link rel="icon" href="{{ url_for('static', filename='foo.jpg') }}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
+     {% endblock %}
+ </head>
+ <body>
+     <h2>
+         <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/panda1.ico') }}">
+         {{ user.name }}'s Watchlist
+     </h2>
+     <nav>
+         <ul>
+             <li><a href="{{ url_for('index') }}">Home</a></li>
+             {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('settings') }}">Settings</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                {% else %}
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+             {% endif %}
+         </ul>
+     </nav>
+     {% block content %}{% endblock %}
+     <footer>
+         <small>&copy; 2018 <a href="http://helloflask.com/tutorial">HelloFlask</a></small>
+     </footer>
+ </body>
+ </html>
